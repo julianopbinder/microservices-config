@@ -1,7 +1,7 @@
 server:
   port: 0
 
-spring.zipkin.baseUrl: http://localhost:9411/
+spring.zipkin.baseUrl: http://192.168.0.189:9411/
 spring.zipkin.sender.type: web
 spring.sleuth.web.skipPattern: ".*metrics.*"
 
@@ -16,4 +16,4 @@ eureka:
   client:
     registryFetchIntervalSeconds: 3
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://192.168.0.189:8761/eureka/
