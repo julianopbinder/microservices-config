@@ -2,6 +2,10 @@ server:
   port: 0
 
 eureka:
+  instance:
+    preferIpAddress: true
+    metadataMap:
+      cluster: CLUSTER
   client:
     serviceUrl:
       defaultZone: http://192.168.1.148:8761/eureka/
