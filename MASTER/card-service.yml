@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 0
 
 spring.zipkin.baseUrl: http://localhost:9411/
 spring.zipkin.sender.type: web
