@@ -15,15 +15,3 @@ turbine.appConfig: card-service,statement-service,card-statement-composite,edge-
 turbine.stream.port: 8989
 InstanceDiscovery.impl: com.netflix.turbine.discovery.EurekaInstanceDiscovery.class
 
----
-spring:
-  profiles: docker
-eureka: 
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
-
-server:
-  port: 8989
