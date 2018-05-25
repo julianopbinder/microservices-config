@@ -2,7 +2,7 @@ server:
   port: 0
 turbine:
   amqp:
-    port: 8989
+    port: 61026
   appConfig: card-service,statement-service,card-statement-composite,edge-server
   aggregator:
     clusterConfig: CLUSTER
@@ -12,6 +12,6 @@ turbine:
 turbine.aggregator.clusterConfig: CLUSTER
 turbine.clusterNameExpression: metadata['cluster']
 turbine.appConfig: card-service,statement-service,card-statement-composite,edge-server
-turbine.stream.port: 8989
+turbine.stream.port: 61026
 InstanceDiscovery.impl: com.netflix.turbine.discovery.EurekaInstanceDiscovery.class
 
