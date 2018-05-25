@@ -1,12 +1,28 @@
- spring:
-  application:
-    name: turbine
-  cloud:
-    config:
-      uri: http://localhost:9090
+ server:
+  port: 0
+turbine:
+  amqp:
+    port: 8080
+  appConfig: card-service,statement-service,card-statement-composite,edge-server
+  aggregator:
+    clusterConfig: CLUSTER
+ # clusterNameExpression: metadata['cluster']
+  combineHostPort: true 
+    
+turbine.aggregator.clusterConfig: CLUSTER
+turbine.clusterNameExpression: metadata['cluster']
+turbine.appConfig: card-service,statement-service,card-statement-composite,edge-server
+turbine.stream.port: 8989
+InstanceDiscovery.impl: org.springframework.cloud.netflix.turbine.EurekaInstanceDiscovery
+
 ---
 spring:
   profiles: docker
-  cloud:
-     config:
-        uri: http://config-server:9090
+  rabbitmq:
+    host: 192.168.1.100
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service:8761/eureka/
