@@ -10,7 +10,7 @@ turbine:
   combineHostPort: true 
     
 turbine.aggregator.clusterConfig: CLUSTER
-#turbine.clusterNameExpression: metadata['cluster']
+turbine.clusterNameExpression: metadata['cluster']
 turbine.appConfig: card-service,statement-service,card-statement-composite,edge-server
 turbine.stream.port: 8989
 InstanceDiscovery.impl: org.springframework.cloud.netflix.turbine.EurekaInstanceDiscovery
