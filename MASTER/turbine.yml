@@ -27,5 +27,5 @@ eureka:
     serviceUrl:
       defaultZone: http://discovery-service:8761/eureka/
 
-server:
+server-old:
   port: 8989
