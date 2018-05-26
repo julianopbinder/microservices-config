@@ -9,7 +9,7 @@ eureka:
     leaseRenewalIntervalInSeconds: 1
  
 spring:
-  profiles: docker
+  #profiles: docker
   sleuth:
     sampler:
       percentage: 1.0
