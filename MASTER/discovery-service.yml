@@ -1,12 +1,14 @@
- server:
+server:  
   port: 8761
-
-# Defines the Eureka server that is used by the Netflix OSS components to use as the registry
-# for server discovery
-eureka:
+    
+eureka:  
   instance:
     hostname: localhost
-    leaseRenewalIntervalInSeconds: 1
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    enableSelfPreservation: false  
  
 spring:
   #profiles: docker
