@@ -1,7 +1,11 @@
-server:
+ server:
   port: 0
 
 eureka:
+  instance:
+    preferIpAddress: true
+    metadataMap:
+      cluster: CLUSTER
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
@@ -13,24 +17,4 @@ spring.sleuth.web.skipPattern: ".*metrics.*"
 spring.sleuth.sampler.percentage: 1
 spring.sleuth.integration.enabled: false
 
----
-spring:
-  profiles: docker
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
-  cloud:
-    loadbalancer:
-      retry:
-        enabled: true
-
-server:
-  port: 8080
-  
-ribbon:
-  MaxAutoRetries: 1
-  MaxAutoRetriesNextServer: 2
-  OkToRetryOnAllOperations: true
+feign.hystrix.enabled: true
