@@ -6,10 +6,8 @@
 eureka:
   instance:
     hostname: localhost
-
     leaseRenewalIntervalInSeconds: 1
  
----
 spring:
   profiles: docker
   sleuth:
@@ -17,13 +15,3 @@ spring:
       percentage: 1.0
   zipkin:
     baseUrl: http://localhost:9411/zipkin/
-eureka-old:
-  server:
-    enableSelfPreservation: false 
-  instance:
-    hostname: discovery-service
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ 
