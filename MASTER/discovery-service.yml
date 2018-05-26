@@ -3,7 +3,7 @@
 
 # Defines the Eureka server that is used by the Netflix OSS components to use as the registry
 # for server discovery
-eureka-old:
+eureka:
   instance:
     hostname: localhost
 
@@ -21,7 +21,7 @@ spring:
       percentage: 1.0
   zipkin:
     baseUrl: http://localhost:9411/zipkin/
-eureka:
+eureka-old:
   server:
     enableSelfPreservation: false 
   instance:
