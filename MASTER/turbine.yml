@@ -1,4 +1,4 @@
-server:
+ server:
   port: 8989
 turbine:
   amqp:
@@ -6,19 +6,11 @@ turbine:
   appConfig: card-service,statement-service,card-statement-composite,edge-server
   aggregator:
     clusterConfig: CLUSTER
-    clusterNameExpression: metadata['cluster']
+ # clusterNameExpression: metadata['cluster']
   combineHostPort: true 
-  stream:
-    port: 8989
-#InstanceDiscovery.impl: org.springframework.cloud.netflix.turbine.EurekaInstanceDiscovery
-
-spring:
-  rabbitmq:
-    host:localhost
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
+    
+turbine.aggregator.clusterConfig: CLUSTER
+turbine.clusterNameExpression: metadata['cluster']
+turbine.appConfig: card-service,statement-service,card-statement-composite,edge-server
+turbine.stream.port: 8989
+InstanceDiscovery.impl: org.springframework.cloud.netflix.turbine.EurekaInstanceDiscovery
